@@ -12,8 +12,12 @@ import ru.skypro.calculator.CalculatorService;
 
 public class CalculatorController {
 
+    private final CalculatorService calculatorService;
+
     @Autowired
-    private CalculatorService calculatorService;
+    public CalculatorController(CalculatorService calculatorService) {
+        this.calculatorService = calculatorService;
+    }
 
     @GetMapping
     public String welcome() {
