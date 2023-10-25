@@ -59,8 +59,13 @@ public class CalculatorController {
             return "Ошибка: Один или оба параметра отсутствуют.";
         }
 
-        String result = calculatorService.divide(num1, num2);
-        return result;
+        int result = calculatorService.divide(num1, num2);
+
+        if (result == 0) {
+            return "Ошибка: Деление на 0.";
+        }
+
+        return num1 + " / " + num2 + " = " + result;
     }
 
 }
